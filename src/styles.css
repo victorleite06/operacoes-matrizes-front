@@ -1,12 +1,23 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+* {
+  --primary: #1b2d7c;
+}
+
 .flex-row {
-  display: flex;
-  flex-direction: row;
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.gap-10 { gap: 10px; }
+.gap-25 { gap: 25px; }
+
+.cursor-pointer {
+  cursor: pointer;
 }

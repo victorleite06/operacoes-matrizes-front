@@ -1,3 +1,20 @@
-<div class="bar flex-row">
-  <span class="titulo">{{titulo}}</span>
-</div>
+<mat-drawer-container style="height: 100%;" autosize>
+  <div class="bar flex-row">
+    <button mat-raised-button class="menu-button" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="titulo">{{titulo}}</span>
+  </div>
+
+  <mat-drawer #drawer class="sidenav flex-column" mode="side">
+    <div class="flex-column content-sidenav">
+      <div class="titulo-sidenav"><span>Operações</span></div>
+
+      <div class="flex-column gap-10 cursor-pointer operacoes">
+        @for (ope of opecacoes; track $index) {
+          <div class="flex-row gap-10">
+            <span>{{ope}}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </mat-drawer>
+</mat-drawer-container>

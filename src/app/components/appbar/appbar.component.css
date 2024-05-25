@@ -1,6 +1,6 @@
 .bar {
   height: 10%;
-  background-color: #1b2d7c;
+  background-color: var(--primary);
   align-items: center;
 }
 
@@ -9,4 +9,52 @@
   font-size: 30px;
   font-weight: 600;
   margin: 0 3%;
+}
+
+.menu-button {
+  width: 64px;
+  padding: 0;
+  margin: 0 0 0 1.5%;
+}
+
+.menu-button mat-icon {
+  position: relative;
+  left: 8px;
+}
+
+.sidenav {
+  background-color: var(--primary);
+  border-top-right-radius: 0;
+  width: 15%;
+}
+
+.content-sidenav {
+  margin: 40% 5% 10% 5%;
+  height: 86vh;
+}
+
+.titulo-sidenav {
+  background-color: azure;
+  color: var(--primary);
+  border-radius: 10px;
+  padding: 2px 6px;
+  text-align: center;
+}
+
+.titulo-sidenav span {
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.operacoes {
+  margin-top: 25px;
+  margin-left: 15%;
+}
+
+.operacoes span {
+  color: azure;
+}
+
+mat-drawer-container mat-drawer-content {
+  margin-left: 15% !important;
 }
