@@ -1,0 +1,12 @@
+.bar {
+  height: 10%;
+  background-color: #1b2d7c;
+  align-items: center;
+}
+
+.titulo {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 3%;
+}
