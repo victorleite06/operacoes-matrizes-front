@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "operacoes-matrizes": {
+    "opercao-ma": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/operacoes-matrizes",
+            "outputPath": "dist/opercao-ma",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,7 +40,12 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -60,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "operacoes-matrizes:build:production"
+              "buildTarget": "opercao-ma:build:production"
             },
             "development": {
-              "buildTarget": "operacoes-matrizes:build:development"
+              "buildTarget": "opercao-ma:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": "c78c41d5-b51e-423f-9436-76bea1eaae34"
+    "analytics": "5674f986-23f4-4356-857a-627a77b8a0a8"
   }
 }
