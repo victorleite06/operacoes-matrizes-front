@@ -9,6 +9,7 @@ export class AppbarComponent implements OnInit {
   @Input() titulo: string = ''
 
   opecacoes: string[] = ['Soma', 'Subtração', 'Multiplicação', 'Divisão', 'Transposta', 'Determinante', 'Inversa']
+  operacaoSelecionado: string = ''
 
   ngOnInit(): void {
 

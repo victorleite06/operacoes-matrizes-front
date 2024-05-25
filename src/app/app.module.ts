@@ -11,11 +11,25 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SomaComponent } from './components/operacoes/soma/soma.component';
+import { SubtracaoComponent } from './components/operacoes/subtracao/subtracao.component';
+import { MultiplicacaoComponent } from './components/operacoes/multiplicacao/multiplicacao.component';
+import { DivisaoComponent } from './components/operacoes/divisao/divisao.component';
+import { TranspostaComponent } from './components/operacoes/transposta/transposta.component';
+import { DeterminanteComponent } from './components/operacoes/determinante/determinante.component';
+import { InversaComponent } from './components/operacoes/inversa/inversa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppbarComponent
+    AppbarComponent,
+    SomaComponent,
+    SubtracaoComponent,
+    MultiplicacaoComponent,
+    DivisaoComponent,
+    TranspostaComponent,
+    DeterminanteComponent,
+    InversaComponent
   ],
   imports: [
     BrowserModule,

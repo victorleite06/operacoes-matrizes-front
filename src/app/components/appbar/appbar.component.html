@@ -1,20 +1,44 @@
 <mat-drawer-container style="height: 100%;" autosize>
-  <div class="bar flex-row">
-    <button mat-raised-button class="menu-button" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-    <span class="titulo">{{titulo}}</span>
-  </div>
-
   <mat-drawer #drawer class="sidenav flex-column" mode="side">
     <div class="flex-column content-sidenav">
       <div class="titulo-sidenav"><span>Operações</span></div>
 
-      <div class="flex-column gap-10 cursor-pointer operacoes">
+      <div class="flex-column gap-25 cursor-pointer operacoes">
         @for (ope of opecacoes; track $index) {
-          <div class="flex-row gap-10">
+          <div class="flex-row gap-10" (click)="operacaoSelecionado = ope; drawer.close()">
             <span>{{ope}}</span>
           </div>
         }
       </div>
     </div>
   </mat-drawer>
+
+  <div class="bar flex-row">
+    <button mat-raised-button class="menu-button" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="titulo">{{titulo}}</span>
+  </div>
+
+  @switch (operacaoSelecionado) {
+    @case ('Soma') {
+      <app-soma></app-soma>
+    }
+    @case ('Subtração') {
+      <app-subtracao></app-subtracao>
+    }
+    @case ('Multiplicação') {
+      <app-multiplicacao></app-multiplicacao>
+    }
+    @case ('Divisão') {
+      <app-divisao></app-divisao>
+    }
+    @case ('Transposta') {
+      <app-transposta></app-transposta>
+    }
+    @case ('Determinante') {
+      <app-determinante></app-determinante>
+    }
+    @case ('Inversa') {
+      <app-inversa></app-inversa>
+    }
+  }
 </mat-drawer-container>
