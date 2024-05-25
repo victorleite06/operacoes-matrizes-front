@@ -1,1 +1,42 @@
-<p>soma works!</p>
+<div class="content">
+  <mat-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="configFormGroup" label="Configuração de Matriz">
+      <form [formGroup]="configFormGroup">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="matrizUmFormGroup" label="Preencher matriz 1">
+      <form [formGroup]="matrizUmFormGroup">
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="matrizDoisFormGroup" label="Preencher matriz 2">
+      <form [formGroup]="matrizDoisFormGroup">
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Resultado">
+      <p>You are now done.</p>
+    </mat-step>
+  </mat-stepper>
+</div>

@@ -18,6 +18,10 @@
     <span class="titulo">{{titulo}}</span>
   </div>
 
+  <div class="flex-row tipo-operacao">
+    <span class="titulo-operacao">Operação de matriz: </span>
+    <span class="operacao">{{operacaoSelecionado}}</span>
+  </div>
   @switch (operacaoSelecionado) {
     @case ('Soma') {
       <app-soma></app-soma>

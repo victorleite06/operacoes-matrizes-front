@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatStepperModule } from '@angular/material/stepper';
 import { SomaComponent } from './components/operacoes/soma/soma.component';
 import { SubtracaoComponent } from './components/operacoes/subtracao/subtracao.component';
 import { MultiplicacaoComponent } from './components/operacoes/multiplicacao/multiplicacao.component';
@@ -18,6 +19,7 @@ import { DivisaoComponent } from './components/operacoes/divisao/divisao.compone
 import { TranspostaComponent } from './components/operacoes/transposta/transposta.component';
 import { DeterminanteComponent } from './components/operacoes/determinante/determinante.component';
 import { InversaComponent } from './components/operacoes/inversa/inversa.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,10 +38,13 @@ import { InversaComponent } from './components/operacoes/inversa/inversa.compone
     AppRoutingModule,
     MatFormFieldModule,
     MatSidenavModule,
+    MatStepperModule,
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),

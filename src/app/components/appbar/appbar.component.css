@@ -58,3 +58,18 @@
 mat-drawer-container mat-drawer-content {
   margin-left: 15% !important;
 }
+
+.tipo-operacao {
+  margin: 2% 0 0 2%;
+}
+
+.titulo-operacao {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.operacao {
+  font-size: 25px;
+  font-weight: 500;
+  color: brown;
+}
