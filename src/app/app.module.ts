@@ -12,13 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
-import { SomaComponent } from './components/operacoes/soma/soma.component';
-import { SubtracaoComponent } from './components/operacoes/subtracao/subtracao.component';
-import { MultiplicacaoComponent } from './components/operacoes/multiplicacao/multiplicacao.component';
-import { DivisaoComponent } from './components/operacoes/divisao/divisao.component';
-import { TranspostaComponent } from './components/operacoes/transposta/transposta.component';
-import { DeterminanteComponent } from './components/operacoes/determinante/determinante.component';
-import { InversaComponent } from './components/operacoes/inversa/inversa.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepperComponent } from './components/components-tela/stepper/stepper.component';
 import { MostrarMatrizComponent } from './components/components-tela/mostrar-matriz/mostrar-matriz.component';
@@ -27,13 +20,6 @@ import { MostrarMatrizComponent } from './components/components-tela/mostrar-mat
   declarations: [
     AppComponent,
     AppbarComponent,
-    SomaComponent,
-    SubtracaoComponent,
-    MultiplicacaoComponent,
-    DivisaoComponent,
-    TranspostaComponent,
-    DeterminanteComponent,
-    InversaComponent,
     StepperComponent,
     MostrarMatrizComponent
   ],

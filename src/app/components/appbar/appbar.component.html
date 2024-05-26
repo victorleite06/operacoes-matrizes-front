@@ -22,27 +22,7 @@
     <span class="titulo-operacao">Operação de matriz: </span>
     <span class="operacao">{{operacaoSelecionado}}</span>
   </div>
-  @switch (operacaoSelecionado) {
-    @case ('Soma') {
-      <app-soma></app-soma>
-    }
-    @case ('Subtração') {
-      <app-subtracao></app-subtracao>
-    }
-    @case ('Multiplicação') {
-      <app-multiplicacao></app-multiplicacao>
-    }
-    @case ('Divisão') {
-      <app-divisao></app-divisao>
-    }
-    @case ('Transposta') {
-      <app-transposta></app-transposta>
-    }
-    @case ('Determinante') {
-      <app-determinante></app-determinante>
-    }
-    @case ('Inversa') {
-      <app-inversa></app-inversa>
-    }
-  }
+  <div style="margin: 2%;">
+    <app-stepper [operacao]="operacaoSelecionado"></app-stepper>
+  </div>
 </mat-drawer-container>

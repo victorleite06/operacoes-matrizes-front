@@ -1,44 +1,43 @@
 @if (preview) {
   <span class="preview">Preview</span>
-}
 
-@for (linha of matriz.values; track $index) {
-  <div class="flex-row">
-    @if ($index === 0 && $index === (matriz.values.length-1)) {
-      <div class="cochete-esquerda-completo"></div>
-    } @else {
-      @if ($index === 0) {
-        <div class="cochete-esquerda-cima"></div>
-      } @else {
-        @if ($index === (matriz.values.length-1)) {
-          <div class="cochete-esquerda-baixo"></div>
-        } @else {
-          <div class="cochete-esquerda"></div>
-        }
-      }
-    }
-
+  @for (linha of matriz.values; track $index) {
     <div class="flex-row">
-      @for (coluna of linha; track $index) {
-        <div class="flex-column">
-          <span style="margin: 0 25px;">{{coluna}}</span>
-        </div>
-      }
-    </div>
-
-    @if ($index === 0 && $index === (matriz.values.length-1)) {
-      <div class="cochete-direita-completo"></div>
-    } @else {
-      @if ($index === (matriz.values.length-1)) {
-        <div class="cochete-direita-baixo"></div>
+      @if ($index === 0 && $index === (matriz.values.length-1)) {
+        <div class="cochete-esquerda-completo"></div>
       } @else {
         @if ($index === 0) {
-          <div class="cochete-direita-cima"></div>
+          <div class="cochete-esquerda-cima"></div>
         } @else {
-          <div class="cochete-direita"></div>
+          @if ($index === (matriz.values.length-1)) {
+            <div class="cochete-esquerda-baixo"></div>
+          } @else {
+            <div class="cochete-esquerda"></div>
+          }
         }
       }
-    }
 
-  </div>
+      <div class="flex-row">
+        @for (coluna of linha; track $index) {
+          <div class="flex-column">
+            <span style="margin: 0 25px;">{{coluna}}</span>
+          </div>
+        }
+      </div>
+
+      @if ($index === 0 && $index === (matriz.values.length-1)) {
+        <div class="cochete-direita-completo"></div>
+      } @else {
+        @if ($index === (matriz.values.length-1)) {
+          <div class="cochete-direita-baixo"></div>
+        } @else {
+          @if ($index === 0) {
+            <div class="cochete-direita-cima"></div>
+          } @else {
+            <div class="cochete-direita"></div>
+          }
+        }
+      }
+    </div>
+  }
 }
