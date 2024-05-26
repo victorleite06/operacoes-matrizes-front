@@ -4,15 +4,17 @@
 
 @for (linha of matriz.values; track $index) {
   <div class="flex-row">
-    @if ($index === 0) {
-      <div class="cochete-esquerda-cima"></div>
-    }
-    @else {
-      @if ($index === (matriz.values.length-1)) {
-        <div class="cochete-esquerda-baixo"></div>
-      }
-      @else {
-        <div class="cochete-esquerda"></div>
+    @if ($index === 0 && $index === (matriz.values.length-1)) {
+      <div class="cochete-esquerda-completo"></div>
+    } @else {
+      @if ($index === 0) {
+        <div class="cochete-esquerda-cima"></div>
+      } @else {
+        @if ($index === (matriz.values.length-1)) {
+          <div class="cochete-esquerda-baixo"></div>
+        } @else {
+          <div class="cochete-esquerda"></div>
+        }
       }
     }
 
@@ -24,15 +26,17 @@
       }
     </div>
 
-    @if ($index === (matriz.values.length-1)) {
-      <div class="cochete-direita-baixo"></div>
-    }
-    @else {
-      @if ($index === 0) {
-        <div class="cochete-direita-cima"></div>
-      }
-      @else {
-        <div class="cochete-direita"></div>
+    @if ($index === 0 && $index === (matriz.values.length-1)) {
+      <div class="cochete-direita-completo"></div>
+    } @else {
+      @if ($index === (matriz.values.length-1)) {
+        <div class="cochete-direita-baixo"></div>
+      } @else {
+        @if ($index === 0) {
+          <div class="cochete-direita-cima"></div>
+        } @else {
+          <div class="cochete-direita"></div>
+        }
       }
     }
 
