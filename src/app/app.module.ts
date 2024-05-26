@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepperComponent } from './components/components-tela/stepper/stepper.component';
@@ -27,6 +28,7 @@ import { MostrarMatrizComponent } from './components/components-tela/mostrar-mat
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
+    MatCheckboxModule,
     MatSidenavModule,
     MatStepperModule,
     MatButtonModule,

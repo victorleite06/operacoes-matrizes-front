@@ -12,6 +12,17 @@
           <input matInput type="number" min="1" placeholder="Colunas"
             [(ngModel)]="colunas" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
+        @if (permiteSegundaMatriz) {
+          @if (!segundaMatriz) {
+            <mat-form-field class="form-menor">
+              <mat-label>Constante</mat-label>
+              <input matInput type="number" min="1" placeholder="Colunas"
+                [(ngModel)]="constanteOperacao" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+          }
+
+          <mat-checkbox [(ngModel)]="segundaMatriz" [ngModelOptions]="{standalone: true}" color="primary">Segunda matriz</mat-checkbox>
+        }
         <div>
           <button mat-button matStepperNext>Próximo</button>
         </div>
@@ -32,7 +43,7 @@
       </div>
     </form>
   </mat-step>
-  @if (segundoGrafo) {
+  @if (segundaMatriz) {
     <mat-step [stepControl]="matrizDoisFormGroup" label="Preencher matriz 2">
       <form [formGroup]="matrizDoisFormGroup">
         <mat-form-field>

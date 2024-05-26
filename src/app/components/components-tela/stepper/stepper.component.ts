@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -6,10 +6,14 @@ import { FormBuilder, Validators } from '@angular/forms';
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.css'
 })
-export class StepperComponent implements OnInit {
+export class StepperComponent implements OnInit, OnChanges {
 
   @Input() operacao: string = ''
-  segundoGrafo: boolean = false
+  segundaMatriz: boolean = false
+  constanteOperacao: number = 1
+
+  operacoesPermSegundaMatriz: string[] = ['Soma', 'Subtração', 'Multiplicação', 'Divisão']
+  permiteSegundaMatriz: boolean = false
 
   linhas: number = 1
   colunas: number = 1
@@ -23,7 +27,20 @@ export class StepperComponent implements OnInit {
   });
 
   ngOnInit(): void {
+  }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['operacao'] && changes['operacao'].currentValue) {
+      this.operacao = changes['operacao'].currentValue
+      this.verificarTipoOperacao()
+
+    }
+  }
+
+  verificarTipoOperacao(){
+    if(this.operacoesPermSegundaMatriz.includes(this.operacao)) {
+      this.permiteSegundaMatriz = true
+    }
   }
 
   constructor(private _formBuilder: FormBuilder) {}
