@@ -32,6 +32,8 @@ export class StepperComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['operacao'] && changes['operacao'].currentValue) {
       this.operacao = changes['operacao'].currentValue
+      this.linhas = 1
+      this.colunas = 1
       this.verificarTipoOperacao()
 
     }
