@@ -1,0 +1,43 @@
+.preview {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-limites {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.cochete-esquerda-cima {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  width: 6px;
+}
+
+.cochete-esquerda {
+  border-left: 2px solid black;
+  width: 6px;
+}
+
+.cochete-esquerda-baixo {
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 6px;
+}
+
+.cochete-direita-cima {
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  width: 6px;
+}
+
+.cochete-direita-baixo {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 6px;
+}
+
+.cochete-direita {
+  border-right: 2px solid black;
+  width: 6px;
+}

@@ -20,6 +20,8 @@ import { TranspostaComponent } from './components/operacoes/transposta/transpost
 import { DeterminanteComponent } from './components/operacoes/determinante/determinante.component';
 import { InversaComponent } from './components/operacoes/inversa/inversa.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StepperComponent } from './components/components-tela/stepper/stepper.component';
+import { MostrarMatrizComponent } from './components/components-tela/mostrar-matriz/mostrar-matriz.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DivisaoComponent,
     TranspostaComponent,
     DeterminanteComponent,
-    InversaComponent
+    InversaComponent,
+    StepperComponent,
+    MostrarMatrizComponent
   ],
   imports: [
     BrowserModule,

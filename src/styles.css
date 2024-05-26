@@ -15,9 +15,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-direction: column !important;
 }
 
+.justify-space-around { justify-content: space-around; }
+.justify-space-between { justify-content: space-between; }
+
 .gap-10 { gap: 10px; }
 .gap-25 { gap: 25px; }
 
-.cursor-pointer {
-  cursor: pointer;
+.cursor-pointer { cursor: pointer; }
+
+.form-menor {
+  width: 130px;
+  margin-right: 10px;
 }
