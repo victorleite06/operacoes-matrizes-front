@@ -55,3 +55,9 @@
   border-right: 2px solid black;
   width: 6px;
 }
+
+.form-matriz {
+  width: 70px;
+  margin: 10px;
+  height: 70px;
+}

@@ -40,4 +40,45 @@
       }
     </div>
   }
+} @else {
+  @for (linha of matrizManipulacao; track $index; let indexL = $index) {
+    <div class="flex-row">
+      @if ($index === 0 && $index === (matrizManipulacao.length-1)) {
+        <div class="cochete-esquerda-completo"></div>
+      } @else {
+        @if ($index === 0) {
+          <div class="cochete-esquerda-cima"></div>
+        } @else {
+          @if ($index === (matrizManipulacao.length-1)) {
+            <div class="cochete-esquerda-baixo"></div>
+          } @else {
+            <div class="cochete-esquerda"></div>
+          }
+        }
+      }
+
+      <div class="flex-row">
+        @for (coluna of linha; track $index; let indexC = $index) {
+          <mat-form-field class="form-matriz">
+            <mat-label>{{'M ' + (indexL+1) + '' + (indexC+1)}}</mat-label>
+            <input matInput type="number" [(ngModel)]="matrizManipulacao[indexL][indexC]" (ngModelChange)="retornarMatriz()" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        }
+      </div>
+
+      @if ($index === 0 && $index === (matrizManipulacao.length-1)) {
+        <div class="cochete-direita-completo"></div>
+      } @else {
+        @if ($index === (matrizManipulacao.length-1)) {
+          <div class="cochete-direita-baixo"></div>
+        } @else {
+          @if ($index === 0) {
+            <div class="cochete-direita-cima"></div>
+          } @else {
+            <div class="cochete-direita"></div>
+          }
+        }
+      }
+    </div>
+  }
 }

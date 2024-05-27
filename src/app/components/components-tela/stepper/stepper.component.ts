@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Matrix } from 'ts-matrix';
 
 @Component({
   selector: 'app-stepper',
@@ -17,14 +18,12 @@ export class StepperComponent implements OnInit, OnChanges {
 
   linhas: number = 1
   colunas: number = 1
+  matriz1: Matrix|null = null
+  matriz2: Matrix|null = null
 
   configFormGroup = this._formBuilder.group({});
-  matrizUmFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  matrizDoisFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  matrizUmFormGroup = this._formBuilder.group({});
+  matrizDoisFormGroup = this._formBuilder.group({});
 
   ngOnInit(): void {
   }
