@@ -9,6 +9,7 @@ import { Matrix } from 'ts-matrix';
 export class MostrarMatrizComponent implements OnChanges {
 
   @Input() preview: boolean = false
+  @Input() cadastro: boolean = false
   @Input() linhas: number = 1
   @Input() colunas: number = 1
   @Input() matriz: Matrix = new Matrix(this.linhas, this.colunas)
@@ -18,12 +19,12 @@ export class MostrarMatrizComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['linhas'] && changes['linhas'].currentValue) {
       this.linhas = changes['linhas'].currentValue
-      this.initMatriz()
+      if(this.preview || this.cadastro) this.initMatriz()
     }
 
     if(changes['colunas'] && changes['colunas'].currentValue) {
       this.colunas = changes['colunas'].currentValue
-      this.initMatriz()
+      if(this.preview || this.cadastro) this.initMatriz()
     }
 
     if(changes['matriz'] && changes['matriz'].currentValue) {

@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.resultado {
+  font-size: 20px;
+  font-weight: 600;
+}

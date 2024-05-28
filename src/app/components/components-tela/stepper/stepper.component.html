@@ -33,7 +33,7 @@
   </mat-step>
   <mat-step [stepControl]="matrizUmFormGroup" label="Preencher matriz 1">
     <form [formGroup]="matrizUmFormGroup">
-      <app-mostrar-matriz [linhas]="linhas" [colunas]="colunas" (receberMatriz)="matriz1 = $event"></app-mostrar-matriz>
+      <app-mostrar-matriz [linhas]="linhas" [colunas]="colunas" [cadastro]="true" (receberMatriz)="matriz1 = $event"></app-mostrar-matriz>
       <div>
         <button mat-button matStepperNext>Próximo</button>
       </div>
@@ -42,7 +42,7 @@
   @if (segundaMatriz) {
     <mat-step [stepControl]="matrizDoisFormGroup" label="Preencher matriz 2">
       <form [formGroup]="matrizDoisFormGroup">
-        <app-mostrar-matriz [linhas]="linhas" [colunas]="colunas" (receberMatriz)="matriz2 = $event"></app-mostrar-matriz>
+        <app-mostrar-matriz [linhas]="linhas" [colunas]="colunas" [cadastro]="true" (receberMatriz)="matriz2 = $event"></app-mostrar-matriz>
         <div>
           <button mat-button matStepperNext>Próximo</button>
         </div>
@@ -50,6 +50,7 @@
     </mat-step>
   }
   <mat-step label="Resultado">
-    <p>You are now done.</p>
+    <app-resultado [matrizA]="matriz1" [matrizB]="matriz2" [operacao]="operacao" [constante]="constanteOperacao"
+      [linhas]="linhas" [colunas]="colunas" [segundaMatriz]="segundaMatriz"></app-resultado>
   </mat-step>
 </mat-stepper>

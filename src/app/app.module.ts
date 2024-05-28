@@ -16,13 +16,15 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepperComponent } from './components/components-tela/stepper/stepper.component';
 import { MostrarMatrizComponent } from './components/components-tela/mostrar-matriz/mostrar-matriz.component';
+import { ResultadoComponent } from './components/resultado/resultado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppbarComponent,
     StepperComponent,
-    MostrarMatrizComponent
+    MostrarMatrizComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,

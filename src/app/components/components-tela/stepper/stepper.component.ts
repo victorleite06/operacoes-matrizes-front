@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 import { Matrix } from 'ts-matrix';
 
 @Component({
@@ -9,17 +10,20 @@ import { Matrix } from 'ts-matrix';
 })
 export class StepperComponent implements OnInit, OnChanges {
 
+  @ViewChild('stepper') private stepper?: MatStepper;
+
+
   @Input() operacao: string = ''
   segundaMatriz: boolean = false
   constanteOperacao: number = 1
 
-  operacoesPermSegundaMatriz: string[] = ['Soma', 'Subtração', 'Multiplicação', 'Divisão']
+  operacoesPermSegundaMatriz: string[] = ['Soma', 'Subtração']
   permiteSegundaMatriz: boolean = false
 
   linhas: number = 1
   colunas: number = 1
-  matriz1: Matrix|null = null
-  matriz2: Matrix|null = null
+  matriz1: Matrix = new Matrix(this.linhas, this.colunas)
+  matriz2?: Matrix
 
   configFormGroup = this._formBuilder.group({});
   matrizUmFormGroup = this._formBuilder.group({});
@@ -34,14 +38,13 @@ export class StepperComponent implements OnInit, OnChanges {
       this.linhas = 1
       this.colunas = 1
       this.verificarTipoOperacao()
+      this.stepper!.reset()
 
     }
   }
 
   verificarTipoOperacao(){
-    if(this.operacoesPermSegundaMatriz.includes(this.operacao)) {
-      this.permiteSegundaMatriz = true
-    }
+    this.permiteSegundaMatriz = this.operacoesPermSegundaMatriz.includes(this.operacao)
   }
 
   constructor(private _formBuilder: FormBuilder) {}

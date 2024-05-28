@@ -73,3 +73,7 @@ mat-drawer-container mat-drawer-content {
   font-weight: 500;
   color: brown;
 }
+
+::ng-deep mat-drawer .mat-drawer-inner-container {
+  overflow: hidden;
+}

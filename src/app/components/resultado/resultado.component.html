@@ -1,0 +1,7 @@
+<div class="content">
+  @if (resultado) {
+    <span class="resultado">Resultado: {{resultado}}</span>
+  } @else {
+    <app-mostrar-matriz [matriz]="resultante" [linhas]="linhas" [colunas]="colunas"></app-mostrar-matriz>
+  }
+</div>
