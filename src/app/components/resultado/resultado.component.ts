@@ -79,6 +79,10 @@ export class ResultadoComponent implements OnChanges {
         this.resultante = this.matrizA.inverse()
         break;
 
+      case 'Cofatores':
+        this.resultante = this.getCofactor(this.matrizA)
+        break;
+
       default:
         break;
     }
@@ -129,6 +133,21 @@ export class ResultadoComponent implements OnChanges {
       }
     }
 
+    return new Matrix(this.linhas, this.colunas, matriz)
+  }
+
+  getCofactor(matrizA: Matrix): Matrix {
+    let matriz: number[][] = new Array(this.linhas)
+    .fill(false)
+    .map(() =>
+      new Array(this.colunas).fill(0)
+    );
+
+    for(let i = 0; i < this.linhas; i++) {
+      for(let j = 0; j < this.colunas; j++) {
+        matriz[i][j] = matrizA.getCofactor(i,j).determinant()
+      }
+    }
     return new Matrix(this.linhas, this.colunas, matriz)
   }
 }
