@@ -21,7 +21,7 @@
             </mat-form-field>
           }
 
-          <mat-checkbox [(ngModel)]="segundaMatriz" [ngModelOptions]="{standalone: true}" color="primary">Segunda matriz</mat-checkbox>
+          <mat-checkbox [(ngModel)]="segundaMatriz" [disabled]="operacao === 'Multiplicação'" [ngModelOptions]="{standalone: true}" color="primary">Segunda matriz</mat-checkbox>
         }
         <div>
           <button mat-button matStepperNext>Próximo</button>

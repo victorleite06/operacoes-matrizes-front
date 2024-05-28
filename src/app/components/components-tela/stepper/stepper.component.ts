@@ -17,7 +17,7 @@ export class StepperComponent implements OnInit, OnChanges {
   segundaMatriz: boolean = false
   constanteOperacao: number = 1
 
-  operacoesPermSegundaMatriz: string[] = ['Soma', 'Subtração']
+  operacoesPermSegundaMatriz: string[] = ['Soma', 'Subtração', 'Multiplicação']
   permiteSegundaMatriz: boolean = false
 
   linhas: number = 1
@@ -45,6 +45,7 @@ export class StepperComponent implements OnInit, OnChanges {
 
   verificarTipoOperacao(){
     this.permiteSegundaMatriz = this.operacoesPermSegundaMatriz.includes(this.operacao)
+    this.segundaMatriz = this.operacao.includes('Multiplicação')
   }
 
   constructor(private _formBuilder: FormBuilder) {}
